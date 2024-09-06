@@ -1,4 +1,4 @@
-# eight-queens-puzzle
+# Eight Queens Puzzle
 In this repository, we will solve the eight queens problem using the following algorithms
 
 ## Stochastic hill climbing
