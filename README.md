@@ -1,5 +1,5 @@
 # Eight Queens Puzzle
-In this repository, we will solve the eight queens problem using the following algorithms
+In this repository, we will solve the eight queens puzzle using the following algorithms:
 
 ## Stochastic hill climbing
 Stochastic Hill Climbing is a variation of the Hill Climbing algorithm that makes small random modifications to candidate solutions and accepts the new solution if it improves the objective function. Unlike traditional Hill Climbing, it may accept non-optimal changes to avoid getting stuck in local maxima/minima, allowing for broader exploration of the search space.
