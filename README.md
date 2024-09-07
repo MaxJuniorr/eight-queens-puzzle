@@ -12,34 +12,29 @@ Stochastic Hill Climbing is a variation of the Hill Climbing algorithm that make
 ![Stochastic Hill Climbing Fluxogram](attachments/HillBlack.png)
 
 #### Fluxogram Explanation
-
 * Start: The algorithm begins.
+  
+* Generate Initial State: The algorithm generates an initial state, which is a random starting point for the solution search process.
 
-* Create the population: In this stage, the initial population is created randomly, containing possible solutions (individuals) for the problem to be solved.
+* Calculate initial state's fitness: The fitness of the initial state is evaluated, determining how close the state is to an ideal solution.
 
-* While iterations < maximum number of generations: This condition checks if the maximum number of iterations (generations) has been reached. If not, the process continues.
+* Iterations = 0: The number of iterations is initialized to 0.
 
-* Calculate each individual’s fitness: At this stage, the algorithm evaluates each individual's fitness in the population, based on how close they are to solving the problem.
+* While number of failures < maxfailures: This loop continues as long as the number of failures (unsuccessful attempts to find a better solution) is less than the maximum allowed failures.
 
-* If fitness = 28: It checks if any individual has obtained a fitness score equal to 28. If so, the algorithm should end, returning the individual who has reached the solution. If the score is not equal to 28, then it proceeds to the next step.
+* The current state's fitness is 28?: It checks if the current state's fitness is equal to 28. If it is, the algorithm ends, as a solution has been found.
 
-* Save the individual with the best fitness to survive: If the previous condition is not met, the best individual (the one with the highest fitness) is saved for the next generation.
+* Visit a random neighbor state: If the fitness is not 28, the algorithm visits a random neighboring state, which means choosing a slight variation of the current state.
 
-* Use the roulette technique to select the parents for crossover: The algorithm selects two individuals (parents) for crossover using the roulette method, where the selection probability is proportional to each individual’s fitness.
+* Calculate the neighbor state's fitness: The fitness of the new neighboring state is evaluated.
 
-* If crossover probability is reached: This step checks whether crossover should occur based on the defined probability.
+* Is the new fitness better?: The algorithm compares the fitness of the neighboring state with the current state.
 
-* Crossover happens: If the crossover condition is met, crossover occurs between the selected parents, generating new individuals (offspring).
+* Change to neighbor state: If the neighboring state's fitness is better, the algorithm switches to the neighboring state.
 
-* If mutation probability is reached: This checks whether mutation should occur based on the mutation probability.
+* Increment the variable "fails": If the neighboring state does not improve the fitness, the algorithm increments the "fails" variable, recording an unsuccessful attempt.
 
-* Mutation happens: If the mutation condition is met, a mutation occurs, introducing changes in a random bit of a random individual.
-
-* Replace the entire population with a new generation, except for the best surviving individual: The algorithm replaces the old population with the new generation, ensuring that the best individual from the previous generation survives.
-
-* Increment iterations: The number of iterations is incremented.
-
-* Repeat until the maximum number of generations is reached or the solution is found.
+* Repeat: The process is repeated while the number of failures is less than the maximum allowed limit and the algorithm has not found a solution with a fitness equal to 28.
 
 #### Results
 Running the Stochastic Hill Climbing 50 times, with a MAXFAILS = 500, we obtain the following metrics:
