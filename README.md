@@ -9,6 +9,7 @@ Stochastic Hill Climbing is a variation of the Hill Climbing algorithm that make
 
 #### Fluxogram
 
+![Stochastic Hill Climbing Fluxogram](attachments/HillBlack.png)
 
 #### Results
 Running the Stochastic Hill Climbing 50 times, with a MAXFAILS = 500, we obtain the following metrics:
@@ -35,6 +36,7 @@ The Genetic Algorithm (GA) is an optimization algorithm inspired by the process 
 
 #### Fluxogram
 
+![Genetic Algorithm Fluxogram](attachments/GeneticBlack.png)
 
 #### Results
 Running the Genetic Algorithm 50 times, with populationSize = 20, mutarioRate = 0.03, crossoverRate = 0.8 and maximumGenerations = 100, we obtain the following metrics:
