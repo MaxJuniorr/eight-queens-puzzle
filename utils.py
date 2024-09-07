@@ -5,10 +5,10 @@ from statistics import mean, pstdev
 def fitness(vector, binary=False):
     # 8 queen's max value
     fitness = 28
-    vector = vector.copy()
 
     # if it's binary, changes back to decimal
     if binary:
+        vector = vector.copy()
         for i in range(len(vector)):
             # debugging
             vector[i] = int(vector[i], 2)
@@ -95,6 +95,17 @@ def rouletteSelection(population, fitnesses):
     cumulatedSum += fitness
     if pointer <= cumulatedSum:
       return population[i]
+    
+def mutate(individual, mutationRate):
+    if random.random() < mutationRate:
+        queenIndex = random.randint(0, 7)
+        bitIndex = random.randint(0, 2)
+        individual[queenIndex] = (
+            individual[queenIndex][:bitIndex] +
+            ('1' if individual[queenIndex][bitIndex] == '0' else '0') +
+            individual[queenIndex][bitIndex + 1:]
+        )
+    return individual
 
 def geneticAugorithm(populationSize = 20, mutationRate = 0.03, crossoverRate = 0.8, maximumGenerations = 1000):
     initialTime = time.time()
@@ -116,26 +127,24 @@ def geneticAugorithm(populationSize = 20, mutationRate = 0.03, crossoverRate = 0
 
         selectedParents = [rouletteSelection(population, fitnesses) for _ in range(populationSize)]
         
-        # crossover
         for i in range(0, populationSize, 2):
+            # Crossover
             if random.random() < crossoverRate:
                 crossoverPoint = random.randint(0, 7)
                 parent1 = selectedParents[i]
                 parent2 = selectedParents[i + 1]
+                
                 child1 = parent1[:crossoverPoint] + parent2[crossoverPoint:]
                 child2 = parent2[:crossoverPoint] + parent1[crossoverPoint:]
-                # mutation
-                if random.random() < mutationRate:
-                    queenIndex = random.randint(0, 7)
-                    bitIndex = random.randint(0, 2)
-                    child1[queenIndex] = child1[queenIndex][:bitIndex] + ('1' if child1[queenIndex][bitIndex] == '0' else '0') + child1[queenIndex][bitIndex + 1:]
-                if random.random() < mutationRate:
-                    queenIndex = random.randint(0, 7)
-                    bitIndex = random.randint(0, 2)
-                    child2[queenIndex] = child2[queenIndex][:bitIndex] + ('1' if child2[queenIndex][bitIndex] == '0' else '0') + child2[queenIndex][bitIndex + 1:]
-                # elitism replacement
-                population[i] = child1
-                population[i + 1] = child2
+                
+                selectedParents[i] = child1
+                selectedParents[i + 1] = child2
+            # Mutation
+            selectedParents[i] = mutate(selectedParents[i], mutationRate)
+            selectedParents[i + 1] = mutate(selectedParents[i + 1], mutationRate)
+        
+        # Elitism replacement
+        population = selectedParents
         # the best individu survives
         population[random.randint(0, populationSize - 1)] = bestIndividual[0]
 
@@ -150,7 +159,7 @@ def showStatistics(algorithm = 0, tests=50):
     solutions = []
 
     if algorithm == 0:
-        print(f"{20 * "="}Stochastic Hill Climbing{20 * "="}")
+        print(f"{20 * "#"} Stochastic Hill Climbing {20 * "#"}")
         for _ in range(tests):
             vector, iterations, fitness, time = stochasticHillClimbing()
             solutions.append(vector)
@@ -158,7 +167,7 @@ def showStatistics(algorithm = 0, tests=50):
             statistics["fitnesses"].append(fitness)
             statistics["times"].append(time)
     if algorithm == 1:
-        print(f"{20 * "="}Genetic Algorithm{20 * "="}")
+        print(f"{20 * "#"} Genetic Algorithm {20 * "#"}")
         for _ in range(tests):
             vector, iterations, fitness, time = geneticAugorithm()
             solutions.append(vector)
@@ -176,5 +185,3 @@ def showStatistics(algorithm = 0, tests=50):
     for key, value in statistics.items():
         print(f"{20 * "="}{key}{20 * "="}")
         print(f"Average: {mean(value)}; Standard deviation: {pstdev(value)}\n")
-
-showStatistics(algorithm=1)

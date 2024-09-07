@@ -1,14 +1,11 @@
 from utils import *
 
 def main():
-    
     # Stochastic Hill Climbing
-    #showStatistics(0)
+    showStatistics(algorithm=0)
 
-    # Genetic algorithm
-    # showStatistics(algorithm=1)
-    geneticAugorithm()
+    # Genetic Algorithm
+    showStatistics(algorithm=1)
 
-
-if __name__ == "main":
+if __name__ == "__main__":
     main()
