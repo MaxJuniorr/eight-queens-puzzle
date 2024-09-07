@@ -11,6 +11,36 @@ Stochastic Hill Climbing is a variation of the Hill Climbing algorithm that make
 
 ![Stochastic Hill Climbing Fluxogram](attachments/HillBlack.png)
 
+#### Fluxogram Explanation
+
+* Start: The algorithm begins.
+
+* Create the population: In this stage, the initial population is created randomly, containing possible solutions (individuals) for the problem to be solved.
+
+* While iterations < maximum number of generations: This condition checks if the maximum number of iterations (generations) has been reached. If not, the process continues.
+
+* Calculate each individual’s fitness: At this stage, the algorithm evaluates each individual's fitness in the population, based on how close they are to solving the problem.
+
+* If fitness = 28: It checks if any individual has obtained a fitness score equal to 28. If so, the algorithm should end, returning the individual who has reached the solution. If the score is not equal to 28, then it proceeds to the next step.
+
+* Save the individual with the best fitness to survive: If the previous condition is not met, the best individual (the one with the highest fitness) is saved for the next generation.
+
+* Use the roulette technique to select the parents for crossover: The algorithm selects two individuals (parents) for crossover using the roulette method, where the selection probability is proportional to each individual’s fitness.
+
+* If crossover probability is reached: This step checks whether crossover should occur based on the defined probability.
+
+* Crossover happens: If the crossover condition is met, crossover occurs between the selected parents, generating new individuals (offspring).
+
+* If mutation probability is reached: This checks whether mutation should occur based on the mutation probability.
+
+* Mutation happens: If the mutation condition is met, a mutation occurs, introducing changes in a random bit of a random individual.
+
+* Replace the entire population with a new generation, except for the best surviving individual: The algorithm replaces the old population with the new generation, ensuring that the best individual from the previous generation survives.
+
+* Increment iterations: The number of iterations is incremented.
+
+* Repeat until the maximum number of generations is reached or the solution is found.
+
 #### Results
 Running the Stochastic Hill Climbing 50 times, with a MAXFAILS = 500, we obtain the following metrics:
 
@@ -37,6 +67,36 @@ The Genetic Algorithm (GA) is an optimization algorithm inspired by the process 
 #### Fluxogram
 
 ![Genetic Algorithm Fluxogram](attachments/GeneticBlack.png)
+
+#### Fluxogram Explanation
+
+* Start: The algorithm begins.
+
+* Create the population: In this stage, the initial population is created randomly, containing possible solutions (individuals) for the problem to be solved.
+
+* While iterations < maximum number of generations: This condition checks if the maximum number of iterations (generations) has been reached. If not, the process continues.
+
+* Calculate each individual’s fitness: At this stage, the algorithm evaluates each individual's fitness in the population, based on how close they are to solving the problem.
+
+* If fitness = 28: It checks if any individual has obtained a fitness score equal to 28. If so, the algorithm should end, returning the individual who has reached the solution. If the score is not equal to 28, then it proceeds to the next step.
+
+* Save the individual with the best fitness to survive: If the previous condition is not met, the best individual (the one with the highest fitness) is saved for the next generation.
+
+* Use the roulette technique to select the parents for crossover: The algorithm selects two individuals (parents) for crossover using the roulette method, where the selection probability is proportional to each individual’s fitness.
+
+* If crossover probability is reached: This step checks whether crossover should occur based on the defined probability.
+
+* Crossover happens: If the crossover condition is met, crossover occurs between the selected parents, generating new individuals (offspring).
+
+* If mutation probability is reached: This checks whether mutation should occur based on the mutation probability.
+
+* Mutation happens: If the mutation condition is met, a mutation occurs, introducing changes in a random bit of a random individual.
+
+* Replace the entire population with a new generation, except for the best surviving individual: The algorithm replaces the old population with the new generation, ensuring that the best individual from the previous generation survives.
+
+* Increment iterations: The number of iterations is incremented.
+
+* Repeat until the maximum number of generations is reached or the solution is found.
 
 #### Results
 Running the Genetic Algorithm 50 times, with populationSize = 20, mutarioRate = 0.03, crossoverRate = 0.8 and maximumGenerations = 100, we obtain the following metrics:
