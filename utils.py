@@ -56,31 +56,33 @@ def stochasticHillClimbing(stepMode = 0, verbose = False):
     
     while fails < MAXFAILS:
         iterations += 1
-        if fitness(vector) == 28:
+        if fitnessVector == 28:
             finalTime = time.time()
             return vector, iterations, fitnessVector, finalTime - initialTime
 
+        newState = vector.copy()
         if stepMode == 0:
         # taking a single step (1 unit) in a random direction
             randomIndex = random.randint(0, 7)
-            if vector[randomIndex] == 0:
-                vector[randomIndex] += 1
-            elif vector[randomIndex] == 7:
-                vector[randomIndex] -= 1
+            if newState[randomIndex] == 0:
+                newState[randomIndex] += 1
+            elif newState[randomIndex] == 7:
+                newState[randomIndex] -= 1
             else:
                 randomValue = random.randint(0, 1)
-                vector[randomIndex] += 1 if randomValue == 1 else -1
+                newState[randomIndex] += 1 if randomValue == 1 else -1
                 
         elif stepMode == 1:
             # putting 1 queen in 1 random position
-            vector[random.randint(0, 7)] = random.randint(0, 7)
+            newState[random.randint(0, 7)] = random.randint(0, 7)
 
         # if the new fitness is better than the old one
         # we take the step
-        newFitness = fitness(vector)
+        newFitness = fitness(newState)
         
         if newFitness > fitnessVector:
             fitnessVector = newFitness
+            vector = newState
         else:
             fails += 1
     

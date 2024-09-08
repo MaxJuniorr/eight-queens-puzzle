@@ -1,6 +1,9 @@
 # Eight Queens Puzzle
 The 8 Queens problem is a classic chess problem that involves placing 8 queens on an 8x8 chessboard in such a way that no queen can attack another. This means that no two queens can be in the same row, column, or diagonal. This problem is an example of a constraint satisfaction problem and has been widely studied in artificial intelligence and computer science theory.
 
+## Board abstraction
+We use a board abstraction through an 8-position vector. Each index of the vector represents a column, and the value stored at each index indicates the corresponding row where a queen is placed in that column. This approach simplifies board manipulation, allowing the state of each column to be represented in a compact and efficient manner. Additionally, it facilitates the application of search and solution algorithms, as we can work directly with the pieces' positions without the need to handle a full 8x8 matrix.
+
 ## Algorithms Used
 In this repository, we will solve the 8 Queens problem using the following algorithms:
 
@@ -40,21 +43,26 @@ Stochastic Hill Climbing is a variation of the Hill Climbing algorithm that make
 Running the Stochastic Hill Climbing 50 times, with a MAXFAILS = 500, we obtain the following metrics:
 
 - ITERATIONS NUMBERS
-    * Average: 493.66
-    * Standard deviation: 69.67886623647087
+    * Average: 493.76
+    * Standard deviation: 62.41043502492192
 - EXECUTION TIME
-    * Average: 0.004920492172241211
-    * Standard deviation: 0.0008095206644539864
+    * Average: 0.0026327848434448244
+    * Standard deviation: 0.0006460846532528766
 - FITNESSES
-    * Average: 25.288888888888888
-    * Standard deviation: 0.5820355934981687
+    * Average: 24.511111111111113
+    * Standard deviation: 1.1278735591510685
 
 With this configuration, the 5 best solutions obtained were:
-* 1 - Solution N1: [2, 5, 1, 4, 7, 0, 6, 3]; Fitness: 28
-* 2 - Solution N1: [2, 5, 0, 6, 2, 2, 4, 2]; Fitness: 27
-* 3 - Solution N1: [0, 4, 1, 6, 1, 6, 4, 2]; Fitness: 27
-* 4 - Solution N1: [5, 0, 3, 1, 4, 3, 5, 7]; Fitness: 26
-* 5 - Solution N1: [2, 6, 3, 2, 2, 3, 1, 4]; Fitness: 26
+* 1 - Solution N1: [4, 6, 1, 3, 7, 0, 2, 5]; Fitness: 28
+    - <img src="attachments/Hill1.png" width="250"/>
+* 2 - Solution N2: [0, 1, 4, 7, 3, 6, 2, 5]; Fitness: 27
+    - <img src="attachments/Hill2.png" width="250"/>
+* 3 - Solution N3: [7, 3, 6, 0, 4, 1, 5, 2]; Fitness: 27
+    - <img src="attachments/Hill3.png" width="250"/>
+* 4 - Solution N4: [1, 3, 1, 6, 4, 2, 0, 5]; Fitness: 27
+    - <img src="attachments/Hill4.png" width="250"/>
+* 5 - Solution N5: [2, 4, 7, 0, 2, 6, 1, 3]; Fitness: 27
+    - <img src="attachments/Hill5.png" width="250"/>
 
 ### 2 - Genetic Algorithm
 The Genetic Algorithm (GA) is an optimization algorithm inspired by the process of natural selection. It employs genetic concepts such as mutation, crossover, and selection to evolve solutions over multiple generations. Fitter solutions have a higher chance of passing their characteristics to the next generation, enabling efficient exploration of the solution space in search of the optimal answer.
@@ -108,10 +116,15 @@ Running the Genetic Algorithm 50 times, with populationSize = 20, mutarioRate = 
 
 With this configuration, the 5 best solutions obtained were:
 * 1 - Solution N1: ['001', '100', '110', '000', '010', '111', '101', '011']; Fitness: 28
+    - <img src="attachments/Genetic1.png" width="250"/>
 * 2 - Solution N2: ['011', '110', '000', '111', '100', '001', '101', '010']; Fitness: 28
+    - <img src="attachments/Genetic2.png" width="250"/>
 * 3 - Solution N3: ['010', '000', '110', '100', '111', '001', '011', '101']; Fitness: 28
+    - <img src="attachments/Genetic3.png" width="250"/>
 * 4 - Solution N4: ['011', '001', '111', '100', '110', '000', '010', '101']; Fitness: 28
+    - <img src="attachments/Genetic4.png" width="250"/>
 * 5 - Solution N5: ['000', '110', '011', '101', '111', '001', '100', '010']; Fitness: 28
+    - <img src="attachments/Genetic5.png" width="250"/>
 
 ## Machine Specifications
 The results above were obtained using the following machine specifications:
