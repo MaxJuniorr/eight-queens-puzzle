@@ -35,6 +35,8 @@ Stochastic Hill Climbing is a variation of the Hill Climbing algorithm that make
 
 * Change to neighbor state: If the neighboring state's fitness is better, the algorithm switches to the neighboring state.
 
+* failures=0: At this point, since there was an improvement in the compared state, the variable failures should be reset. This way, we ensure that the algorithm will only stop if there are 500 consecutive failed iterations.
+
 * Increment the variable "fails": If the neighboring state does not improve the fitness, the algorithm increments the "fails" variable, recording an unsuccessful attempt.
 
 * Repeat: The process is repeated while the number of failures is less than the maximum allowed limit and the algorithm has not found a solution with a fitness equal to 28.
