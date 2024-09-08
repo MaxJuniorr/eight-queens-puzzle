@@ -41,7 +41,7 @@ def fitness(vector, binary=False):
             
     return fitness
 
-def stochasticHillClimbing(stepMode = 0, verbose = False):
+def stochasticHillClimbing(stepMode = 1, verbose = False):
     initialTime = time.time()
     vector = [random.randint(0, 7) for _ in range(8)]
     fitnessVector = fitness(vector)
@@ -83,6 +83,7 @@ def stochasticHillClimbing(stepMode = 0, verbose = False):
         if newFitness > fitnessVector:
             fitnessVector = newFitness
             vector = newState
+            fails = 0
         else:
             fails += 1
     

@@ -43,26 +43,26 @@ Stochastic Hill Climbing is a variation of the Hill Climbing algorithm that make
 Running the Stochastic Hill Climbing 50 times, with a MAXFAILS = 500, we obtain the following metrics:
 
 - ITERATIONS NUMBERS
-    * Average: 493.76
-    * Standard deviation: 62.41043502492192
+    * Average: 507.88
+    * Standard deviation: 175.60337582176487
 - EXECUTION TIME
-    * Average: 0.0026327848434448244
-    * Standard deviation: 0.0006460846532528766
+    * Average: 0.0027778816223144533
+    * Standard deviation: 0.0010211321562727837
 - FITNESSES
-    * Average: 24.511111111111113
-    * Standard deviation: 1.1278735591510685
+    * Average: 26.466666666666665
+    * Standard deviation: 0.7180219742846006
 
 With this configuration, the 5 best solutions obtained were:
-* 1 - Solution N1: [4, 6, 1, 3, 7, 0, 2, 5]; Fitness: 28
-    - <img src="attachments/Hill1.png" width="250"/>
-* 2 - Solution N2: [0, 1, 4, 7, 3, 6, 2, 5]; Fitness: 27
-    - <img src="attachments/Hill2.png" width="250"/>
-* 3 - Solution N3: [7, 3, 6, 0, 4, 1, 5, 2]; Fitness: 27
-    - <img src="attachments/Hill3.png" width="250"/>
-* 4 - Solution N4: [1, 3, 1, 6, 4, 2, 0, 5]; Fitness: 27
-    - <img src="attachments/Hill4.png" width="250"/>
-* 5 - Solution N5: [2, 4, 7, 0, 2, 6, 1, 3]; Fitness: 27
-    - <img src="attachments/Hill5.png" width="250"/>
+* 1 - Solution N1: [1, 4, 6, 3, 0, 7, 5, 2]; Fitness: 28
+    - <img src="attachments/Hill1.png" width="300"/>
+* 2 - Solution N2: [6, 2, 0, 5, 7, 4, 1, 3]; Fitness: 28
+    - <img src="attachments/Hill2.png" width="300"/>
+* 3 - Solution N3: [1, 3, 5, 7, 2, 0, 6, 4]; Fitness: 28
+    - <img src="attachments/Hill3.png" width="300"/>
+* 4 - Solution N4: [7, 1, 3, 0, 6, 4, 2, 5]; Fitness: 28
+    - <img src="attachments/Hill4.png" width="300"/>
+* 5 - Solution N5: [5, 3, 6, 0, 2, 4, 1, 7]; Fitness: 28
+    - <img src="attachments/Hill5.png" width="300"/>
 
 ### 2 - Genetic Algorithm
 The Genetic Algorithm (GA) is an optimization algorithm inspired by the process of natural selection. It employs genetic concepts such as mutation, crossover, and selection to evolve solutions over multiple generations. Fitter solutions have a higher chance of passing their characteristics to the next generation, enabling efficient exploration of the solution space in search of the optimal answer.
@@ -116,15 +116,15 @@ Running the Genetic Algorithm 50 times, with populationSize = 20, mutarioRate = 
 
 With this configuration, the 5 best solutions obtained were:
 * 1 - Solution N1: ['001', '100', '110', '000', '010', '111', '101', '011']; Fitness: 28
-    - <img src="attachments/Genetic1.png" width="250"/>
+    - <img src="attachments/Genetic1.png" width="300"/>
 * 2 - Solution N2: ['011', '110', '000', '111', '100', '001', '101', '010']; Fitness: 28
-    - <img src="attachments/Genetic2.png" width="250"/>
+    - <img src="attachments/Genetic2.png" width="300"/>
 * 3 - Solution N3: ['010', '000', '110', '100', '111', '001', '011', '101']; Fitness: 28
-    - <img src="attachments/Genetic3.png" width="250"/>
+    - <img src="attachments/Genetic3.png" width="300"/>
 * 4 - Solution N4: ['011', '001', '111', '100', '110', '000', '010', '101']; Fitness: 28
-    - <img src="attachments/Genetic4.png" width="250"/>
+    - <img src="attachments/Genetic4.png" width="300"/>
 * 5 - Solution N5: ['000', '110', '011', '101', '111', '001', '100', '010']; Fitness: 28
-    - <img src="attachments/Genetic5.png" width="250"/>
+    - <img src="attachments/Genetic5.png" width="300"/>
 
 ## Machine Specifications
 The results above were obtained using the following machine specifications:

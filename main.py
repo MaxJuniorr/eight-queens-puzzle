@@ -1,4 +1,4 @@
-from utils import *
+from utils import showStatistics
 
 def main():
     # Stochastic Hill Climbing
