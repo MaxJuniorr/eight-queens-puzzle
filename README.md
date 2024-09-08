@@ -22,9 +22,9 @@ Stochastic Hill Climbing is a variation of the Hill Climbing algorithm that make
 
 * While number of failures < maxfailures: This loop continues as long as the number of failures (unsuccessful attempts to find a better solution) is less than the maximum allowed failures.
 
-* The current state's fitness is 28?: It checks if the current state's fitness is equal to 28. If it is, the algorithm ends, as a solution has been found.
+* The current state's fitness is 28?: It checks if the current state's fitness is equal to 28, which means that none of the possible pairs of queens (C(8,2)) are attacking each other. If it is, the algorithm ends, as a solution has been found.
 
-* Visit a random neighbor state: If the fitness is not 28, the algorithm visits a random neighboring state, which means choosing a slight variation of the current state.
+* Visit a random neighbor state: If the fitness is not 28, the algorithm visits a random neighboring state, which means choosing a slight variation of the current state. Which consists in moving 1 queen.
 
 * Calculate the neighbor state's fitness: The fitness of the new neighboring state is evaluated.
 
@@ -73,7 +73,7 @@ The Genetic Algorithm (GA) is an optimization algorithm inspired by the process 
 
 * Calculate each individual’s fitness: At this stage, the algorithm evaluates each individual's fitness in the population, based on how close they are to solving the problem.
 
-* If fitness = 28: It checks if any individual has obtained a fitness score equal to 28. If so, the algorithm should end, returning the individual who has reached the solution. If the score is not equal to 28, then it proceeds to the next step.
+* If fitness = 28: It checks if any individual has obtained a fitness score equal to 28, which means that none of the possible pairs of queens (C(8,2)) are attacking each other. If so, the algorithm should end, returning the individual who has reached the solution. If the score is not equal to 28, then it proceeds to the next step.
 
 * Save the individual with the best fitness to survive: If the previous condition is not met, the best individual (the one with the highest fitness) is saved for the next generation.
 
